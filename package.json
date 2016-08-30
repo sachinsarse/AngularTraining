@@ -1,0 +1,15 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "first Angular app",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "gulp default"
+  },
+  "author": "Espl",
+  "license": "ISC",
+  "devDependencies": {  
+    "gulp": "^3.9.1",  
+    "gulp-connect-multi": "^1.0.8"  
+  }
+}

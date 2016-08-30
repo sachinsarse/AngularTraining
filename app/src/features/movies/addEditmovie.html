@@ -1,0 +1,31 @@
+<!--<div>{{"abcd"|length}}</div>-->
+<show-label label="{{routeVM.label}}"></show-label>
+<form name="form" class="form" novalidate>
+    <div class="form-group">
+        <label class="control-label" for="title">Title <span class="asterisk">*</span></label>
+        <input type="text" id="title" name="title" class="form-control" ng-model="routeVM.newshow.title" required />
+        <span ng-show="(form.submitted && form.title.$error.required)" class="text-danger">Title is required. </span>
+    </div>
+    <div class="form-group">
+        <label class="control-label" for="year">Year <span class="asterisk">*</span></label>
+        <input id="year" name="year" class="form-control" type="number" min="1900" max="2030" class="form-control" ng-model="routeVM.newshow.year"
+            required />
+        <span ng-show="(form.submitted && form.year.$error.required)" class="text-danger">Year is required. </span>
+        <span ng-show="(form.submitted && form.year.$error.min )" class="text-danger">Year must be greater than 1950. </span>
+        <span ng-show="(form.submitted && form.year.$error.max )" class="text-danger">Year must be less than 2017. </span>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6">
+            <label>Favorite:
+                <input type="checkbox" ng-model="routeVM.newshow.favorite" />
+            </label>
+        </div>
+        <div class="col-xs-6" ng-if="!routeVM.id">
+            <button id="add" class="btn btn-success pull-right" ng-click="routeVM.addShow(form,routeVM.newshow)"><span class="glyphicon glyphicon-plus-sign"></span> Add</button>
+        </div>
+        <div class="col-xs-6" ng-if="routeVM.id">
+            <button id="update" class="btn btn-success pull-right" ng-click="routeVM.updateShow(form,routeVM.newshow)"><span class="glyphicon"></span> Update</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app="mainApp">
+
+<head lang="en">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Angular-Gulp-Starter</title>
+
+  <!-- styles -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+
+  <link rel="stylesheet" href="src/css/main.css" />
+</head>
+
+<body>
+
+<!--Navigation-->
+<div class="container container-padding">
+  <div class="row">
+    <div class="col-md-3">
+      <h4 class="text-left menu-text ">Menu </h4>
+      <ul class="nav">
+        <li id="movie"><a href="#Home"> Home </a></li>
+        <li id="movie"><a href="#Movies"> Movies List </a></li>
+        <li id="newMovie"><a href="#AddNewMovie"> Add New movie </a></li>
+      </ul>
+    </div>
+    <div class="col-md-9">
+      <div ng-view></div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- scripts -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+  <!-- include js files -->
+
+  <script src="mainApp.js"></script>
+
+  <!--directive-->
+  <script src="src/directive/showLabel/showLabel.js"></script>
+
+  <!--filter-->
+  <script src="src/filter/lengthFilter.js"></script>
+
+  <!-- features -->
+  <script src="src/features/movies/moviesController.js"></script>
+  <script src="src/features/movies/addMovieController.js"></script>
+  <script src="src/features/movies/editMovieController.js"></script>
+
+  <!-- service -->
+  <script src="src/service/movieService.js"></script>
+  <script src="src/factory/orderService.js"></script>
+
+   <!-- mock -->
+   <script src="src/mock/mockService.js"></script>
+
+</body>
+
+</html>
