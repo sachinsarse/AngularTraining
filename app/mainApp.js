@@ -1,4 +1,4 @@
-var sampleApp = angular.module('mainApp', ['ngRoute','ngMockE2E']);
+var sampleApp = angular.module('mainApp', ['ngRoute']); //'ngMockE2E'
 
 sampleApp.config(['$routeProvider',
     function($routeProvider) {

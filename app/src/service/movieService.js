@@ -88,7 +88,7 @@ angular.module('mainApp').service('movieService', function ($q, $http) {
     // *** Using $http *** //
 
     this.getMovies = function () {
-        return $http.get('api/controller/getMovies').then(
+        return $http.get('http://localhost:4000/api/movies').then(
             function (response) {
                 return response;
             },
@@ -99,10 +99,12 @@ angular.module('mainApp').service('movieService', function ($q, $http) {
     }
 
     this.getMovieById = function (id) {
-        var data = {
+        var params = {
             id: id
         };
-        return $http.post('api/controller/getMovieById', data).then(
+        
+        return $http.get('http://localhost:4000/api/movie'+ '/' + id).then(
+          //  this.requestUrl + '/' + id
             function (response) {
                 return response;
             },
@@ -113,7 +115,7 @@ angular.module('mainApp').service('movieService', function ($q, $http) {
     }
 
     this.addMovie = function (movie) {
-        return $http.post('api/controller/addMovie', movie).then(
+        return $http.post('http://localhost:4000/api/movies', movie).then(
             function (response) {
                 return response;
             },
@@ -124,7 +126,7 @@ angular.module('mainApp').service('movieService', function ($q, $http) {
     };
 
     this.updateMovie = function (movie) {
-        return $http.post('api/controller/updateMovie', movie).then(
+        return $http.put('http://localhost:4000/api/movies', movie).then(
             function (response) {
                 return response;
             },
@@ -135,7 +137,7 @@ angular.module('mainApp').service('movieService', function ($q, $http) {
     };
 
     this.deleteMovie = function (id) {
-        return $http.post('api/controller/deleteMovie', { id: id }).then(
+        return $http.delete('http://localhost:4000/api/movie'+ '/' + id).then(
             function (response) {
                 return response;
             },

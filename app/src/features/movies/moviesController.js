@@ -17,7 +17,7 @@ angular.module('mainApp').controller('moviesController', function (movieService,
     vm.deleteMovie = function (item) {
         movieService.deleteMovie(item.id).then(function (response) {
             if (response.status === 200) {
-                vm.gridItems = response.data;
+                vm.getMovies();
             }
         }, function (error) {
             console.log('error', error);
